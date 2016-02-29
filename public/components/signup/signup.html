@@ -1,0 +1,46 @@
+<div layout="row" layout-align="center center">
+    <md-card flex flex-sm="100" flex-gt-sm="60" flex-gt-md="30" style="border-radius: 1%" >
+        <md-card-content>
+             <form name="signupForm" novalidate ng-submit="signup()">
+                 <md-input-container  class="md-block">
+                     <label>First Name</label>
+                     <input required name="userFirstName" ng-model="userSignup.userFirstName">
+                     <div ng-messages="signupForm.userFirstName.$error" ng-show="signupForm.userFirstName.$touched">
+                         <div ng-message="required">First Name is required.</div>
+                     </div>
+                 </md-input-container>
+                 <md-input-container  class="md-block">
+                     <label>Last Name</label>
+                     <input required name="userLastName" ng-model="userSignup.userLastName">
+                     <div ng-messages="signupForm.userLastName.$error" ng-show="signupForm.userLastName.$touched">
+                         <div ng-message="required">Last Name is required.</div>
+                     </div>
+                 </md-input-container>
+                 <md-input-container  class="md-block">
+                     <label>Email</label>
+                     <input required type="email" name="userEmail" ng-model="userSignup.userEmail" ng-pattern="/^.+@.+\..+$/" />
+                     <div ng-messages="signupForm.userEmail.$error" role="alert" ng-show="signupForm.userEmail.$touched || signupForm.email.$dirty">
+                         <div ng-message="required">Email is required.</div>
+                         <div ng-message="pattern">
+                             Your email must look like an e-mail address.
+                         </div>
+                     </div>
+                 </md-input-container>
+                <md-input-container  class="md-block">
+                     <label>Password</label>
+                     <input minlength="6" required name="userPassword" ng-model="userSignup.userPassword" type="password">
+                     <div ng-messages="signupForm.userPassword.$error" ng-show="signupForm.userPassword.$touched  || signupForm.userPassword.$dirty">
+                         <div ng-message="required">Password is required.</div>
+                         <div ng-message="minlength">Password must be minimun 6 characters long.</div>
+                     </div>
+                 </md-input-container>
+                 <div  layout="column">
+                     <md-button class="md-raised md-primary" type="submit">Sign Up</md-button>
+                      <div style="text-align:center">Already have account?</div>
+                    <md-button class="md-raised md-primary" ng-click="gotoLogin()">Login</md-button>
+                </div>
+             </form>
+
+        </md-card-content>
+    </md-card>
+</div>

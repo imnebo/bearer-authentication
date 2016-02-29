@@ -1,0 +1,23 @@
+{
+  "name": "bearerClient",
+  "homepage": "https://github.com/zeeshanshanif/bearer-authentication",
+  "authors": [
+    "zeeshanhanif"
+  ],
+  "description": "Sample Bearer Authentication app.",
+  "main": "js/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-ui-router": "ui-router#~0.2.18",
+    "angular-material": "~1.0.5"
+  }
+}

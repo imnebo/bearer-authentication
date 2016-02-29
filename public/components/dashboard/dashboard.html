@@ -1,0 +1,87 @@
+
+<div layout="column" ng-cloak>
+  <md-toolbar md-scroll-shrink >
+    <div class="md-toolbar-tools" layout="row" layout-align="start end">
+      <h3 flex>
+        <span>Products</span>
+      </h3>
+      <span flex="20">
+          <md-button class=" md-hue-1" ng-click="addProduct()">Add Product</md-button>
+          <md-button class=" md-hue-1" ng-click="logout()">Logout</md-button>
+      </span>   
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="product in products" >
+            <div class="md-list-item-text" >
+                <h3>{{product.productName}}</h3>
+                <h4>{{product.productPrice}}</h4>
+                <p>
+                    {{product.productQuantity}}
+                </p>
+            </div>
+            <div>
+            <md-button class="md-secondary" ng-click="editProduct(product)">Edit</md-button>
+            </div>
+            <md-divider inset></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div> 
+        <!-- Edit Product  -->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="edit-right">
+  <md-toolbar class="md-theme-light">
+    <h1 class="md-toolbar-tools">Edit Product</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <form>
+      <md-input-container>
+        <label for="testInput">Product Name</label>
+        <input type="text" 
+               ng-model="product.productName" md-autofocus>
+      </md-input-container>
+      <md-input-container>
+        <label for="testInput">Product Price</label>
+        <input type="text"
+               ng-model="product.productPrice" md-autofocus>
+      </md-input-container>
+      <md-input-container>
+        <label for="testInput">Product Quantity</label>
+        <input type="text" 
+               ng-model="product.productQuantity" md-autofocus>
+      </md-input-container>
+    </form>
+    <md-button ng-click="update(product)" class="md-primary">
+      Save
+    </md-button>
+  </md-content>
+</md-sidenav>
+        <!-- Add Product  -->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="add-right">
+  <md-toolbar class="md-theme-light">
+    <h1 class="md-toolbar-tools">Add Product</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <form>
+      <md-input-container>
+        <label for="testInput">Product Name</label>
+        <input type="text" 
+               ng-model="newProduct.productName" md-autofocus>
+      </md-input-container>
+      <md-input-container>
+        <label for="testInput">Product Price</label>
+        <input type="text"
+               ng-model="newProduct.productPrice" md-autofocus>
+      </md-input-container>
+      <md-input-container>
+        <label for="testInput">Product Quantity</label>
+        <input type="text" 
+               ng-model="newProduct.productQuantity" md-autofocus>
+      </md-input-container>
+    </form>
+    <md-button ng-click="save()" class="md-primary">
+      Save
+    </md-button>
+  </md-content>
+</md-sidenav> 
