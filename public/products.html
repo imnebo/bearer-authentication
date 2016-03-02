@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery-2.2.1.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/products.js"></script>
+
+</head>
+<body>
+<h1>Products</h1>
+<input type="button" id="logout" value="Logout">
+<input type="button" id="showAddProduct" value="Add Product">
+<div id="div1"></div>
+<table id="productsTable">
+    <thead>
+    <tr >
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="products">
+
+    </tbody>
+
+</table>
+
+<table id="addBox">
+    <tr>
+        <th colspan="2"><b>Add Product</b></th>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td><input type="text" id="productName"></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><input type="number" id="productPrice"></td>
+    </tr>
+    <tr>
+        <th>Quantity</th>
+        <td><input type="number" id="productQuantity"></td>
+    </tr>
+    <tr>
+        <th><input type="button" class="cancel" value="Cancel"></th>
+        <td><input type="button" id="addProduct" value="Add Product"></td>
+    </tr>
+</table>
+
+<table id="editBox">
+    <tr>
+        <th colspan="2"><b>Edit Product</b></th>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td><input type="text" id="editProductName"></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><input type="number" id="editProductPrice"></td>
+    </tr>
+    <tr>
+        <th>Quantity</th>
+        <td><input type="number" id="editProductQuantity"></td>
+    </tr>
+    <tr>
+        <th><input type="button" class="cancel" value="Cancel"></th>
+        <td><input type="button" id="editProduct" value="Update Product"></td>
+    </tr>
+</table>
+</body>
+</html>

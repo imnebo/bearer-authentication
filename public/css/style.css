@@ -1,0 +1,50 @@
+body{
+    width:70%;
+    margin: auto;
+}
+div{
+    width: 100%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+#loginTable, #signupTable{
+    width: 40%;
+    margin: auto;
+    margin-top: 60px;
+}
+#loginTable td, #signupTable td{
+    width: 50%;
+    margin: auto;
+}
+#loginTable td input, #signupTable td input{
+    width: 100%;
+    margin: auto;
+}
+td{
+    padding: 10px;
+}
+th {
+    text-align: left;
+}
+td:hover{
+    /*padding: 10px;*/
+    /*border-right: 1px solid;*/
+    /*border-bottom: 1px solid;*/
+}
+div{
+    /*border: 1px solid;*/
+}
+#editBox, #addBox{
+    margin-top: 10px;
+}
+#products td{
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+}

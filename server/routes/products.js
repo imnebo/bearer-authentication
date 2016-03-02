@@ -17,12 +17,12 @@ module.exports = function (app) {
      * ADD PRODUCT
      * user = {},
      * body = {
- *      productName : '',
- *      productType : '',
- *      productPrice : '',
- *      productUser : ''
- *      productQuantity : ''
- * }
+     *      productName : '',
+     *      productType : '',
+     *      productPrice : '',
+     *      productUser : ''
+     *      productQuantity : ''
+     * }
      * */
     app.post('/product/add', function (req, res, next) {
         var newproduct = new app.db.models.Product(
@@ -49,16 +49,17 @@ module.exports = function (app) {
      * UPDATE PRODUCT
      * user = {},
      * body = {
- *      _id         : '',
- *      productName : '',
- *      productType : '',
- *      productPrice : '',
- *      productQuantity : ''
- * }
+     *      _id         : '',
+     *      productName : '',
+     *      productType : '',
+     *      productPrice : '',
+     *      productQuantity : ''
+     * }
      * */
     app.post('/product/updateproduct', function (req, res, next) {
 
-        app.db.models.Product.findOneAndUpdate({_id: req.body._id},
+        console.log('updateproduct', req.body);
+        app.db.models.Product.update({_id: req.body._id},
             {
                 productName: req.body.productName,
                 productType: req.body.productType,
@@ -66,6 +67,26 @@ module.exports = function (app) {
                 //productUser: req.user._id,
                 productQuantity: req.body.productQuantity
             }, function (err, data) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    console.log('updateproduct', data)
+                    res.send(data);
+                }
+            });
+
+    });
+    /**
+     * Remove PRODUCT
+     * user = {},
+     * body = {
+     *      _id         : ''
+     * }
+     * */
+    app.post('/product/removeproduct', function (req, res, next) {
+
+        app.db.models.Product.findOneAndRemove({_id: req.body._id},
+            function (err, data) {
                 if (err) {
                     res.send(err);
                 } else {

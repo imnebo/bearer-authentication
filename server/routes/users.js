@@ -6,7 +6,6 @@ module.exports = function (app) {
      *
      * */
     app.get('/', function (req, res, next) {
-        console.log("in routes");
         res.sendFile('index.html');
     });
 
@@ -24,8 +23,6 @@ module.exports = function (app) {
             } else if (record) {
                 if (record.userPassword == req.body.userPassword) {
                     res.redirect('gettoken');
-                    console.log('GETTING TOKEN');
-                    //res.send({status: true, data: record});
                 } else {
                     res.send({status: false, message: 'Wrong Credentials!!'});
                 }
